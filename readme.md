@@ -1,4 +1,4 @@
-<h2 align="center"><b> 🥞 DagsterStack 🥞 </b></h2>
+<h2 align="center"><b> 🥞 Dagstack 🥞 </b></h2>
 
 <br>
 
