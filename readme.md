@@ -35,6 +35,7 @@ Dependencies:
     - dagster-duckdb-pandas: 0.16.13
   pandas: 1.5.0
   plotly: 5.10.0
+  pytest: 7.1.3 
 ````
 
 To clone the template project from Dagster :
