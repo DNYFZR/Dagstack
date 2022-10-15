@@ -69,5 +69,5 @@ def order_count_plot(context, customers: pd.DataFrame):
   chart_path = file_relative_path(__file__, "OrderCount.html")
   fig.write_html(chart_path, auto_open=True)
 
-  context.add_output_metadata({"plot_url": MetadataValue(f"file://{chart_path}")})
+  context.add_output_metadata({"plot_url": MetadataValue.url(f"file://{chart_path}")})
   
