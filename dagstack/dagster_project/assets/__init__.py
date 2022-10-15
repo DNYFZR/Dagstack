@@ -1,8 +1,8 @@
 ## Refer to Using dbt with Dagster, part two for info about this file:
 ## https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster/part-two
-import pandas as pd
+import pandas as pd, plotly.express as px
 from dagster_dbt import load_assets_from_dbt_project
-from dagster import asset, file_relative_path
+from dagster import AssetIn, MetadataValue, asset, file_relative_path
 
 __doc__ = '''
 load_assets_from_dbt_project :
@@ -27,6 +27,13 @@ load_assets_from_dbt_project :
   - group_name : 
     - When Dagster loads the dbt models as assets, the assets will be placed in an asset group 
     - Based on the name of the folder (staging) containing the models. 
+
+Dagster output
+  - customers is supplied as an argument to ins, 
+  - defining it as an upstream asset dependency of the order_count_chart asset
+  - Used AssetIn to explicitly define an upstream dependency
+  - The chart is saved as order_count_chart.html in CWD
+  - The chart is automatically opened in the browser upon successful materialization
 '''
 
 # Project Config
@@ -51,3 +58,16 @@ dbt_assets = load_assets_from_dbt_project(
     project_dir=DBT_PROJECT_PATH, 
     profiles_dir=DBT_PROFILES,
     key_prefix=[PROJECT_NAME], )
+
+
+# Create Dagster Asset
+@asset(ins={"customers": AssetIn(key_prefix=[PROJECT_NAME])}, group_name="staging", )
+def order_count_plot(context, customers: pd.DataFrame):
+  fig = px.histogram(customers, x = 'number_of_orders')
+  fig.update_layout(bargap = 0.25)
+
+  chart_path = file_relative_path(__file__, "OrderCount.html")
+  fig.write_html(chart_path, auto_open=True)
+
+  context.add_output_metadata({"plot_url": MetadataValue(f"file://{chart_path}")})
+  
