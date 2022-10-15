@@ -1,4 +1,4 @@
-<h2 align="center"><b> 🥞 Dagstack 🥞 </b></h2>
+<h2 align="center"><b> 🧮 Dagstack 🧮 </b></h2>
 
 <p align="center">
 Analytics Engineeirng Pipeline using Dagster, dbt & DuckDB
