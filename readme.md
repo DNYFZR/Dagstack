@@ -1,17 +1,27 @@
 <h2 align="center"><b> 🥞 Dagstack 🥞 </b></h2>
 
-<br>
+<p align="center">
+Analytics Engineeirng Pipeline using Dagster, dbt & DuckDB
+</p><br>
 
-In this project we will build an analytics pipeline using Dagster, dbt, DuckDB, Pandas & Plotly.
+<h3 align="center"><b> 🧱 Project Build </b></h3>
 
-Raw data will be fetched with Pandas, processed using dbt, stored with DuckDB, all orchestrated by Dagster, the output will be generated with Plotly.
+---
 
-Dagster Guide : [Dagster, dbt & DuckDB tutorial](https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster)
+In this project :
 
+- Raw data will be fetched with Pandas
+- Processed using dbt
+- Stored with DuckDB
+- Orchestrated by Dagster
+- Outputs will be visaulized using Plotly
 
-<h3 align="center"><b> 🧱 Project Set-up </b></h3>
+References :
 
-<br>
+- dbt  dev project: [jaffle shop](https://github.com/dbt-labs/jaffle_shop)
+- Dagster Guide : [Dagster, dbt & DuckDB tutorial](https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster)
+
+<br><h3 align="center"><b> 🌿 Dev Environment </b></h3>
 
 ---
 
