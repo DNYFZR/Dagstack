@@ -10,16 +10,11 @@ Analytics Engineeirng Pipeline using Dagster, dbt & DuckDB
 
 In this project :
 
-- Raw data will be fetched with Pandas
+- Raw data will be fetched from a URL with Pandas
 - Processed using dbt
-- Stored with DuckDB
-- Orchestrated by Dagster
+- Stored within DuckDB
+- Orchestration handled with Dagster
 - Outputs will be visaulized using Plotly
-
-References :
-
-- dbt  dev project: [jaffle shop](https://github.com/dbt-labs/jaffle_shop)
-- Dagster Guide : [Dagster, dbt & DuckDB tutorial](https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster)
 
 <br><h3 align="center"><b> 🌿 Dev Environment </b></h3>
 
@@ -48,11 +43,18 @@ Dependencies:
   pytest: 7.1.3 
 ````
 
+<br><h3 align="center"><b> 📚 References </b></h3>
+
 To clone the template project from Dagster :
 
 ````cmd
 dagster project from-example --name dbt_dagster --example tutorial_dbt_dagster 
 ````
+
+References :
+
+- dbt dev project: [jaffle shop](https://github.com/dbt-labs/jaffle_shop)
+- Dagster Guide : [Dagster, dbt & DuckDB tutorial](https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster)
 
 ---
 ---
