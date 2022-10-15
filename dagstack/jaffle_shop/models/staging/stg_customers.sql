@@ -2,7 +2,7 @@
 -- https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster/part-one
 
 SELECT 
-    id as customer_id
+    id as customer_id,
     first_name,
     last_name
 FROM {{ source('jaffle_shop', 'customers_raw') }}
