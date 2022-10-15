@@ -8,9 +8,14 @@ Raw data will be fetched with Pandas, processed using dbt, stored with DuckDB, a
 
 Dagster Guide : [Dagster, dbt & DuckDB tutorial](https://docs.dagster.io/integrations/dbt/using-dbt-with-dagster)
 
+
 <h3 align="center"><b> 🧱 Project Set-up </b></h3>
 
+<br>
+
 ---
+
+This repo has been developed in the following environment :
 
 ````yaml
 Environment:
@@ -28,11 +33,14 @@ Dependencies:
     - dagster-dbt: 0.16.13
     - dagster-duckdb: 0.16.13
     - dagster-duckdb-pandas: 0.16.13
-  raw-data:
-    - pandas: 1.5.0
-  plots:
-    - plotly: 5.10.0
+  pandas: 1.5.0
+  plotly: 5.10.0
+````
 
+To clone the template project from Dagster :
+
+````cmd
+dagster project from-example --name dbt_dagster --example tutorial_dbt_dagster 
 ````
 
 ---
